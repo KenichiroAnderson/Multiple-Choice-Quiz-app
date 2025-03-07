@@ -11,3 +11,6 @@ This is a local host project. If you are looking for proper webpages and servers
 
 Sample image things will change once I am done my exam:
 ![Screenshot 2025-03-06 205504](https://github.com/user-attachments/assets/f5cf49f5-f651-4d3a-9ce6-11fa52c63d41)
+
+
+As of Thursday March 6, 2025 No support for simple execution requires IDE to run appologies to those who are not able to use. 
