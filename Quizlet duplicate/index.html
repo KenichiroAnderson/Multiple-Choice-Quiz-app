@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuroscience Learning App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🧠 Neuroscience Learning App</h1>
+
+        <!-- Flashcard Section  not done yet. -->
+        <div id="flashcard-section">
+            <h2>Flashcard Mode</h2>
+            <p>Tap to flip and reveal the answer</p>
+            <div id="card-container">
+                <div class="card" onclick="flipCard()">
+                    <div class="front" id="term"></div>
+                    <div class="back" id="definition"></div>
+                </div>
+            </div>
+            <button onclick="nextCard()">Next Card</button>
+            <button onclick="startQuiz()">Start Learn Mode</button>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section" style="display:none;">
+            <h2>📚 Learn Mode</h2>
+            <p id="progress"></p>
+            <p id="quiz-question"></p>
+            <div id="quiz-answer-container"></div>
+            <p id="quiz-feedback"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
