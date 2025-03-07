@@ -9,4 +9,5 @@ This is a local host project. If you are looking for proper webpages and servers
 
 
 
-
+Sample image things will change once I am done my exam:
+![Screenshot 2025-03-06 205504](https://github.com/user-attachments/assets/f5cf49f5-f651-4d3a-9ce6-11fa52c63d41)
