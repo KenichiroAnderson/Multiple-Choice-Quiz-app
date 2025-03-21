@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Key Concept Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>📘 Key Concept Quiz</h1>
+    <div id="question-box">
+      <p id="kcq-question"></p>
+      <div id="kcq-options"></div>
+      <p id="kcq-feedback"></p>
+      <button id="next-button" onclick="nextKCQ()">Next</button>
+    </div>
+    <br>
+    <button onclick="location.href='index.html'">← Back to App</button>
+  </div>
+
+  <script>
+    const kcqQuestions = [
+  {
+    question: "In classical conditioning, a conditioned stimulus is paired with an unconditioned stimulus to produce",
+    options: [
+      "a. a neutral stimulus.",
+      "b. a conditioned response.",
+      "c. an unconditioned response.",
+      "d. another conditioned stimulus."
+    ],
+    answer: "b. a conditioned response."
+  },
+  {
+    question: "What occurs when a conditioned stimulus is no longer paired with an unconditioned stimulus?",
+    options: [
+      "a. generalization",
+      "b. spontaneous recovery",
+      "c. extinction",
+      "d. acquisition"
+    ],
+    answer: "c. extinction"
+  },
+  {
+    question: "What did Watson and Rayner seek to demonstrate about behaviorism through the Little Albert experiments?",
+    options: [
+      "a. Conditioning involves a degree of cognition.",
+      "b. Classical conditioning has an evolutionary component.",
+      "c. Behaviorism alone cannot explain human behavior.",
+      "d. Even sophisticated behaviors such as emotion are subject to classical conditioning."
+    ],
+    answer: "d. Even sophisticated behaviors such as emotion are subject to classical conditioning."
+  },
+  {
+    question: "Which part of the brain is involved in the classical conditioning of fear?",
+    options: [
+      "a. the amygdala",
+      "b. the cerebellum",
+      "c. the hippocampus",
+      "d. the hypothalamus"
+    ],
+    answer: "a. the amygdala"
+  },
+  {
+    question: "After having a bad experience with a particular type of food, people can develop a lifelong aversion to that food. This suggests that conditioning has a(n) aspect.",
+    options: [
+      "a. cognitive",
+      "b. evolutionary",
+      "c. neural",
+      "d. behavioral"
+    ],
+    answer: "b. evolutionary"
+  },
+  {
+    question: "Which of the following mechanisms have no role in Skinner’s approach to behavior?",
+    options: [
+      "a. cognitive",
+      "b. neural",
+      "c. evolutionary",
+      "d. all of the above"
+    ],
+    answer: "d. all of the above"
+  },
+  {
+    question: "Latent learning provides evidence for a cognitive element in operant conditioning because it",
+    options: [
+      "a. occurs without any obvious reinforcement.",
+      "b. requires both positive and negative reinforcement.",
+      "c. points toward the operation of a neural reward center.",
+      "d. depends on a stimulus–response relationship."
+    ],
+    answer: "a. occurs without any obvious reinforcement."
+  },
+  {
+    question: "Neural research indicates that observational learning is closely tied to brain areas that are involved in",
+    options: [
+      "a. memory.",
+      "b. vision.",
+      "c. action.",
+      "d. emotion."
+    ],
+    answer: "c. action."
+  },
+  {
+    question: "What kind of learning takes place largely independent of awareness of both the process and the products of information acquisition?",
+    options: [
+      "a. latent learning",
+      "b. implicit learning",
+      "c. observational learning",
+      "d. conscious learning"
+    ],
+    answer: "b. implicit learning"
+  },
+  {
+    question: "Which study strategy has been shown to be the most effective?",
+    options: [
+      "a. highlighting text",
+      "b. rereading",
+      "c. summarizing",
+      "d. taking practice tests"
+    ],
+    answer: "d. taking practice tests"
+  },
+  {
+    question: "Sensation involves , whereas perception involves .",
+    options: [
+      "a. organization; coordination",
+      "b. stimulation; interpretation",
+      "c. identification; translation",
+      "d. comprehension; information"
+    ],
+    answer: "b. stimulation; interpretation"
+  },
+  {
+    question: "What process converts physical signals from the environment into neural signals carried by sensory neurons into the central nervous system?",
+    options: [
+      "a. representation",
+      "b. identification",
+      "c. propagation",
+      "d. transduction"
+    ],
+    answer: "d. transduction"
+  },
+  {
+    question: "The smallest intensity needed to just barely detect a stimulus is called",
+    options: [
+      "a. proportional magnitude.",
+      "b. the absolute threshold.",
+      "c. the just noticeable difference.",
+      "d. Weber’s law."
+    ],
+    answer: "b. the absolute threshold."
+  },
+  {
+    question: "Signal detection theory is helpful because it allows researchers to distinguish between:",
+    options: [
+      "a. sensitivity and acuity",
+      "b. perceptual sensitivity and decision criterion",
+      "c. signals and noise",
+      "d. expectations and knowledge"
+    ],
+    answer: "b. perceptual sensitivity and decision criterion"
+  },
+  {
+    question: "Light striking the retina, causing a specific pattern of response in the three cone types, leads to our ability to see",
+    options: [
+      "a. motion.",
+      "b. colors.",
+      "c. depth.",
+      "d. shadows."
+    ],
+    answer: "b. colors."
+  },
+  {
+    question: "Which part of the brain is the location of the primary visual cortex, where encoded information is systematically mapped into a representation of the visual scene?",
+    options: [
+      "a. the thalamus",
+      "b. the lateral geniculate nucleus",
+      "c. the fovea",
+      "d. area V1"
+    ],
+    answer: "d. area V1"
+  },
+  {
+    question: "Our ability to combine visual details so that we perceive unified objects is explained by",
+    options: [
+      "a. feature-integration theory.",
+      "b. illusory conjunction.",
+      "c. synesthesia.",
+      "d. ventral and dorsal streaming."
+    ],
+    answer: "a. feature-integration theory."
+  },
+  {
+    question: "What kind of cues are relative size and linear perspective?",
+    options: [
+      "a. motion-based",
+      "b. binocular",
+      "c. monocular",
+      "d. template"
+    ],
+    answer: "c. monocular"
+  },
+  {
+    question: "The placement of our ears on opposite sides of the head is crucial to our ability to",
+    options: [
+      "a. localize sound sources.",
+      "b. determine pitch.",
+      "c. judge intensity.",
+      "d. recognize complexity."
+    ],
+    answer: "a. localize sound sources."
+  },
+  {
+    question: "What best explains why smells can have immediate and powerful effects?",
+    options: [
+      "a. the involvement in smell of brain centers for emotions and memories",
+      "b. the vast number of olfactory receptor neurons we have",
+      "c. our ability to detect odors from pheromones",
+      "d. the fact that different odorant molecules produce varied patterns of activity"
+    ],
+    answer: "a. the involvement in smell of brain centers for emotions and memories"
+  }
+];
+
+
+    let currentKCQIndex = 0;
+
+    function nextKCQ() {
+      document.getElementById("kcq-feedback").textContent = "";
+
+      if (currentKCQIndex >= kcqQuestions.length) {
+        document.getElementById("question-box").innerHTML = "<h2>🎉 Quiz Complete!</h2>";
+        return;
+      }
+
+      const current = kcqQuestions[currentKCQIndex];
+      document.getElementById("kcq-question").textContent = `${currentKCQIndex + 1}. ${current.question}`;
+      document.getElementById("kcq-options").innerHTML = "";
+
+      current.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.textContent = opt;
+        btn.onclick = () => checkKCQAnswer(opt, current.answer);
+        document.getElementById("kcq-options").appendChild(btn);
+      });
+
+      currentKCQIndex++;
+    }
+
+    function checkKCQAnswer(selected, correct) {
+      const feedback = document.getElementById("kcq-feedback");
+      if (selected === correct) {
+        feedback.textContent = "✅ Correct!";
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = `❌ Incorrect. Answer: ${correct}`;
+        feedback.style.color = "red";
+      }
+    }
+
+    window.onload = nextKCQ;
+  </script>
+</body>
+<style>
+    /* Key Concept Quiz styles */
+#kcq-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+#kcq-options button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#kcq-options button:hover {
+    background: linear-gradient(135deg, #5e0ebf, #1a61c9);
+    transform: scale(1.05);
+}
+
+#kcq-feedback {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+</style>
+</html>
