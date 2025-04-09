@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Definition Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧪 Definition Quiz</h1>
+    <div id="def-quiz-box">
+      <p id="def-quiz-term"></p>
+      <div id="def-quiz-options"></div>
+      <p id="def-quiz-feedback"></p>
+      <button id="def-next-button" onclick="nextDefinition()">Next</button>
+    </div>
+    <br>
+    <button onclick="location.href='index.html'">← Back to App</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    let defCurrentIndex = 0;
+    let defCorrect = new Set();
+
+    function nextDefinition() {
+      document.getElementById("def-quiz-feedback").textContent = "";
+
+      if (defCorrect.size >= terms.length) {
+        document.getElementById("def-quiz-box").innerHTML = "<h2>🎉 You've completed the Definition Quiz!</h2>";
+        return;
+      }
+
+      let remaining = terms.filter(t => !defCorrect.has(t.term));
+      let item = remaining[Math.floor(Math.random() * remaining.length)];
+
+      document.getElementById("def-quiz-term").textContent = `What is the definition of: "${item.term}"?`;
+
+      const incorrectDefs = terms
+        .filter(t => t.term !== item.term)
+        .map(t => t.definition)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3);
+
+      const choices = [item.definition, ...incorrectDefs].sort(() => 0.5 - Math.random());
+
+      const optionsDiv = document.getElementById("def-quiz-options");
+      optionsDiv.innerHTML = "";
+
+      choices.forEach(def => {
+        const btn = document.createElement("button");
+        btn.textContent = def;
+        btn.onclick = () => checkDefinition(def, item.definition, item.term);
+        optionsDiv.appendChild(btn);
+      });
+    }
+
+    function checkDefinition(selected, correct, term) {
+      const feedback = document.getElementById("def-quiz-feedback");
+      if (selected === correct) {
+        defCorrect.add(term);
+        feedback.textContent = "✅ Correct!";
+        feedback.style.color = "green";
+      } else {
+        feedback.textContent = `❌ Incorrect. Answer: ${correct}`;
+        feedback.style.color = "red";
+      }
+    }
+
+    window.onload = nextDefinition;
+  </script>
+</body>
+</html>

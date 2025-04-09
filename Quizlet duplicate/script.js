@@ -15,7 +15,7 @@ const terms = [
     { term: "Cones", definition: "Detect color and operate under normal daylight conditions." },
     { term: "Rods", definition: "Become active only under low light conditions for night vision." },
     { term: "Blind spot", definition: "A location in the visual field that produces no sensation on the retina." },
-    { term: "Area V1", definition: "Part of the occipital lobe that contains the primary visual cortex." },
+    { term: "Area V1", definition: "Part of the occipital lobe that contains the primary visual cortex." }, //#1
     { term: "Color-opponent system", definition: "Pairs of cone types (channels) work in opposition." },
     { term: "Visual receptive field", definition: "The region of the visual field to which each neuron responds." },
     { term: "Ventral stream", definition: "Represents an object's shape and identity." },
@@ -44,7 +44,7 @@ const terms = [
     { term: "Basilar membrane", definition: "Moves with vibrations transmitted through the oval window." },
     { term: "Traveling wave", definition: "Wave pattern along the basilar membrane related to sound frequency." },
     { term: "Inner hair cells", definition: "Auditory receptor neurons embedded in the basilar membrane." },
-    { term: "Area A1", definition: "Primary auditory cortex in the temporal lobe." },
+    { term: "Area A1", definition: "Primary auditory cortex in the temporal lobe." },// figure out 2 defs #2
     { term: "Place code", definition: "Pitch is determined by location of hair cell activity on the basilar membrane." },
     { term: "Temporal code", definition: "Pitch is determined by timing of action potentials." },
     { term: "Conductive hearing loss", definition: "When the eardrum or ossicles cannot conduct sound waves." },
